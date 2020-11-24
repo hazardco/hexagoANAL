@@ -7,3 +7,18 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+
+  mysql:
+    image: mysql:5.7
+    hostname: mysql
+    volumes:
+        - ./data/db:/var/lib/mysql
+    ports:
+        - 3306:3306
+    volumes: 
+        - './.data/conf:/etc/mysql/conf.d'
+    environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DATABASE: ${MYSQL_DATABASE}
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}

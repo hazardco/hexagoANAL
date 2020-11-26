@@ -2,7 +2,7 @@
   "name": "CorreosService",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
     "start:watch": "nodemon",

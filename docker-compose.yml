@@ -31,6 +31,14 @@ services:
       ports:
         - 3002:3002
 
+  correosservice:
+      hostname: correosservice
+      build: 
+        context: ./CorreosService
+        dockerfile: Dockerfile
+      ports:
+        - 3001:3001
+
 
   frontend:
       hostname: frontend-hexagonal

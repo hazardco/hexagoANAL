@@ -37,19 +37,21 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var uuid_1 = require("uuid");
-var CrearUsuarioController = function (usuariosReppository, usuariosLogsRepository) { return function (usuarioNuevo) { return __awaiter(_this, void 0, void 0, function () {
-    var usuario;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                // El uuid deve ir como valueObject en el Domain
-                usuarioNuevo.id = uuid_1.v4();
-                return [4 /*yield*/, usuariosReppository.add(usuarioNuevo)];
-            case 1:
-                usuario = _a.sent();
-                usuariosLogsRepository.notifica(usuario);
-                return [2 /*return*/, usuario];
-        }
-    });
-}); }; };
+var CrearUsuarioController = function (usuariosReppository, usuariosLogsRepository) {
+    return function (usuarioNuevo) { return __awaiter(_this, void 0, void 0, function () {
+        var usuario;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    // El uuid deve ir como valueObject en el Domain
+                    usuarioNuevo.id = uuid_1.v4();
+                    return [4 /*yield*/, usuariosReppository.add(usuarioNuevo)];
+                case 1:
+                    usuario = _a.sent();
+                    usuariosLogsRepository.notifica(usuario);
+                    return [2 /*return*/, usuario];
+            }
+        });
+    }); };
+};
 exports.default = CrearUsuarioController;

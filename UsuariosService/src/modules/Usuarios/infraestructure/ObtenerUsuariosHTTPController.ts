@@ -1,5 +1,5 @@
-import { Response, Request } from 'express';
-import ObtenerUsuariosController from '../application/ObtenerUsuarios';
+import { Request, Response } from "express";
+import ObtenerUsuariosController from "../application/ObtenerUsuarios";
 
 const ObtenerUsuariosHTTPController = async (request: Request, response: Response) => {
 

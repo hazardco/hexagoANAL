@@ -1,14 +1,17 @@
-import {Entity, Column, PrimaryColumn} from "typeorm";
+import {Column, Entity, PrimaryColumn} from "typeorm";
 
 @Entity()
 export class Usuario {
 
     @PrimaryColumn()
-    id: string;
+    public id: string;
 
     @Column()
-    nombre: string;
+    public nombre: string;
 
     @Column()
-    apellidos: string;
+    public apellidos: string;
+
+    @Column()
+    public correo: string;
 }

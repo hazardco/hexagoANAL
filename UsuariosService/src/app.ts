@@ -1,36 +1,32 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
-import cors from 'cors';
+import bodyParser from "body-parser";
+import cors from "cors";
+import express from "express";
+import morgan from "morgan";
 
-import 'reflect-metadata';
+import "reflect-metadata";
 import {createConnection} from "typeorm";
 
-import ObtenerUsuariosHTTPController from './modules/Usuarios/infraestructure/ObtenerUsuariosHTTPController';
-import CrearUsuarioHTTPController from './modules/Usuarios/infraestructure/CrearUsuarioHTTPController';
-
+import CrearUsuarioHTTPController from "./modules/Usuarios/infraestructure/CrearUsuarioHTTPController";
+import ObtenerUsuariosHTTPController from "./modules/Usuarios/infraestructure/ObtenerUsuariosHTTPController";
 
 const app = express();
 createConnection();
 
-//Middlewares 
+// Middlewares
 
 app.use(cors());
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(bodyParser.json());
-
 
 const port = 3002;
 
+// Rutas
+app.get("/usuarios", ObtenerUsuariosHTTPController);
 
-//Rutas
-app.get('/usuarios', ObtenerUsuariosHTTPController);
+// app.get('/usuarios/:id', obtenerUsuarioHTTPController);
 
-//app.get('/usuarios/:id', obtenerUsuarioHTTPController);
-
-app.post('/usuarios', CrearUsuarioHTTPController);
-
+app.post("/usuarios", CrearUsuarioHTTPController);
 
 app.listen(port, () => {
-  console.info(`Listo on port ${port}`);
+  // console.log(`Listo on port ${port}`);
 });

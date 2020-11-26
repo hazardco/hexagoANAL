@@ -46,8 +46,6 @@ var CrearUsuarioHTTPController = function (request, response) { return __awaiter
         switch (_a.label) {
             case 0:
                 body = request.body;
-                console.log("--------");
-                console.log(body);
                 usuarioNuevo = body;
                 return [4 /*yield*/, CrearUsuarios_1.default(usuarioNuevo)];
             case 1:

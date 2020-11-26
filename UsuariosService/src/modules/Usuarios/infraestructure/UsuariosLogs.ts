@@ -1,13 +1,13 @@
-import UsuarioModel from "../domain/models/usuario.model";
-import UsuariosLogsRepository from "../domain/repositories/UsuariosLogsRepository";
+import IUsuarioModel from "../domain/models/IUsuario.model";
+import IUsuariosLogsRepository from "../domain/repositories/IUsuariosLogsRepository";
 
-class UsuariosLogs implements UsuariosLogsRepository {
-    
-    public notifica(usuario: UsuarioModel): any {    
-        
-        console.log("Usuario creado correctamente");
-        console.log(usuario);
-       
+class UsuariosLogs implements IUsuariosLogsRepository {
+
+    public notifica(usuario: IUsuarioModel): any {
+
+        // console.log("Usuario creado correctamente");
+        // console.log(usuario);
+
     }
 }
 

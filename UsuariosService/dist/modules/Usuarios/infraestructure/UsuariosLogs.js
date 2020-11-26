@@ -4,8 +4,8 @@ var UsuariosLogs = /** @class */ (function () {
     function UsuariosLogs() {
     }
     UsuariosLogs.prototype.notifica = function (usuario) {
-        console.log("Usuario creado correctamente");
-        console.log(usuario);
+        // console.log("Usuario creado correctamente");
+        // console.log(usuario);
     };
     return UsuariosLogs;
 }());

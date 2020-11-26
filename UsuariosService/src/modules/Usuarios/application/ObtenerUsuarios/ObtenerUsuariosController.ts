@@ -1,11 +1,9 @@
-import UsuariosReppository from '../../domain/repositories/usuariosRepository';
+import IUsuariosReppository from "../../domain/repositories/IUsuariosRepository";
 
-
-
-const ObtenerUsuariosController = (usuariosReppository: UsuariosReppository ) => async () => {
+const ObtenerUsuariosController = (usuariosReppository: IUsuariosReppository ) => async () => {
     const usuarios = await usuariosReppository.getAll();
 
     return usuarios;
-}
+};
 
 export default ObtenerUsuariosController;

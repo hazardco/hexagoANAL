@@ -22,3 +22,21 @@ services:
         MYSQL_DATABASE: ${MYSQL_DATABASE}
         MYSQL_USER: ${MYSQL_USER}
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  usuariosservice:
+      hostname: usuariosservice
+      build: 
+        context: ./UsuariosService
+        dockerfile: Dockerfile
+      ports:
+        - 3002:3002
+
+
+  frontend:
+      hostname: frontend-hexagonal
+      build: 
+        context: ./frontend-hexagonal
+        dockerfile: Dockerfile
+      ports:
+        - 3000:3000
+

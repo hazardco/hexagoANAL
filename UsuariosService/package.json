@@ -2,13 +2,14 @@
   "name": "UsuariosService",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/app.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
-    "start:watch": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-server": "nodemon -w src -x ts-node src/app.ts",
-    "docker": "node ./dist/app.js"
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "watch": "tsc -w & nodemon .",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

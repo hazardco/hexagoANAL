@@ -1,13 +1,13 @@
-import { Response, Request } from 'express';
-import CrearUsuarioController from '../application/CrearUsuarios';
+import { Request, Response } from "express";
+import CrearUsuarioController from "../application/CrearUsuarios";
 
 const CrearUsuarioHTTPController = async (request: Request, response: Response) => {
 
   const { body } = request;
-  console.log("--------");
-  console.log(body);
-  let usuarioNuevo = body;
-  
+  // console.log("--------");
+  // console.log(body);
+  const usuarioNuevo = body;
+
   const usuario = await CrearUsuarioController(usuarioNuevo);
 
   response.json(usuario);

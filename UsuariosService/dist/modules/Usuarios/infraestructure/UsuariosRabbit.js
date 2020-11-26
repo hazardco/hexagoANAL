@@ -8,18 +8,18 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Amqp = __importStar(require("amqp-ts"));
-//var connection = new Amqp.Connection("amqp://localhost");
-//var exchange = connection.declareExchange("hexagoANAL");
-//var queue = connection.declareQueue("Mensajes");
-//queue.bind(exchange);
-//queue.activateConsumer((message) => {
+// var connection = new Amqp.Connection("amqp://localhost");
+// var exchange = connection.declareExchange("hexagoANAL");
+// var queue = connection.declareQueue("Mensajes");
+// queue.bind(exchange);
+// queue.activateConsumer((message) => {
 //    console.log("Message received: " + message.getContent());
-//});
+// });
 //
 //// it is possible that the following message is not received because
 //// it can be sent before the queue, binding or consumer exist
-//var msg = new Amqp.Message("Test");
-//exchange.send(msg);
+// var msg = new Amqp.Message("Test");
+// exchange.send(msg);
 var UsuariosRabbit = /** @class */ (function () {
     function UsuariosRabbit() {
         this.connection = new Amqp.Connection("amqp://localhost");
@@ -28,10 +28,10 @@ var UsuariosRabbit = /** @class */ (function () {
         this.queue.bind(this.exchange);
     }
     UsuariosRabbit.prototype.notifica = function (usuario) {
-        //console.log("Usuario creado correctamente");
-        console.log(usuario);
+        // console.log("Usuario creado correctamente");
+        // console.log(usuario);
         var msg = new Amqp.Message(usuario);
-        console.log("Mensaje enviado correctamente!!!!");
+        // console.log("Mensaje enviado correctamente!!!!");
         this.exchange.send(msg);
     };
     return UsuariosRabbit;
